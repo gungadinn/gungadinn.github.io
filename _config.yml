@@ -1,6 +1,6 @@
 # Site
 title:              Pingu
-bio:                'studying'
+bio:                '개발을 잘 하고 싶어요.'
 description:        ""
 reading_time:       true
 words_per_minute:   200
@@ -37,7 +37,7 @@ disqus_shortname:   taylantatli
   #ad-client:
   #ad-slot:
 #bing-verify:
-#email:
+email:    ovo.pingu@gmail.com
 #twitter:            username
 #facebook:           username
 github-url:         gungadinn
