@@ -4,8 +4,8 @@ bio:                'studying'
 description:        ""
 reading_time:       true
 words_per_minute:   200
-logo:               'assets/img/logo2.png'
-background:         'assets/img/bg01.jpg'
+logo:               'assets/img/moon2.png'
+background:         'assets/img/background.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
 url:                https://gungadinn.github.io/
@@ -40,7 +40,7 @@ disqus_shortname:   taylantatli
 #email:
 #twitter:            username
 #facebook:           username
-github-url:         "https://github.com/gungadinn"
+github-url:         gungadinn
 #stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
 #linkedin:          username
 #xing:              username
