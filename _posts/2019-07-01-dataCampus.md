@@ -16,7 +16,7 @@ import this
 
 python 철학 출력
 
-
+<br>
 
 ```python
 import antigravity
@@ -24,7 +24,7 @@ import antigravity
 
 [site](https://xkcd.com/353/)
 
-
+<br>
 
 ```python
 import keyword
@@ -56,7 +56,7 @@ dir(keyword)
 >
 > kwlist : keyword 리스트 보여줌
 
-</br>
+<br>
 
 ```python
 keyword.kwlist
@@ -79,7 +79,7 @@ keyword.kwlist
 > ...]
 > ```
 
-</br>
+<br>
 
 ```python
 len(keyword.kwlist)
@@ -87,9 +87,9 @@ len(keyword.kwlist)
 
 > <u>output</u> : 35
 
-</br>
+<br>
 
-</br>
+<br>
 
 ####1. 식별자와 표현식
 
@@ -99,7 +99,7 @@ a=1+2 (왼쪽 : 식별자 (identifier) / 오른쪽 : 표현식)
 
 ex) 1+2는 3으로 축약할 수 있음
 
-</br>
+<br>
 
 ```python
 레골라스 = 1
@@ -108,16 +108,16 @@ print(레골라스)
 
 output : 1
 
-</br>
+<br>
 
 식별자 선언 시
 
 1. 메모리에 공간 확보
 2. 그 메모리를 가르키는 공간 확보 (binding)
 
-</br>
+<br>
 
-</br>
+<br>
 
 #### 2. 네임스페이스
 
@@ -131,7 +131,7 @@ x
 
 > NameError : 정의되지 않은 언어를 출력할 때 에러 발생
 
-</br>
+<br>
 
 ```python
 %whos
@@ -145,13 +145,13 @@ x
 
 ![image-20190702194444445](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190702194444445.png)
 
-</br>
+<br>
 
 ```python
 %who
 ```
 
-![image-20190702194458822](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190702194458822.png)</br>
+![image-20190702194458822](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190702194458822.png)<br>
 
 ```python
 %who_ls
@@ -159,9 +159,9 @@ x
 
 ![image-20190702194526560](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190702194526560.png)
 
-</br>
+<br>
 
-</br>
+<br>
 
 #### 3. 메모리
 
@@ -183,7 +183,7 @@ b=10
 id(b)   # output : 4443780800
 ```
 
-</br>
+<br>
 
 ##### 재할당 
 
@@ -198,7 +198,7 @@ id(a)   # output : 4493789552
 
 ```
 
-</br>
+<br>
 
 아래의 예에서는 인터닝 때문에 메모리가 안 바뀐다. (그렇지만 파이썬 3.7부터는 인터닝 기법 바뀌었음)
 
@@ -210,7 +210,7 @@ a=3
 id(a)   # output : 4443780576 
 ```
 
-</br>
+<br>
 
 ##### mutable의 메모리 주소
 
@@ -224,9 +224,9 @@ id(a)   # output : 4494359304
 
 id는 주소 값에서 첫번째 주소를 가리킨다. 때문에 변한 것이 없어보이지만 실제로 할당량은 바뀌었다. C언어의 포인터 개념으로 생각하면 된다.
 
-</br>
+<br>
 
-</br>
+<br>
 
 #### 4. is와 ==
 
@@ -242,9 +242,9 @@ a == b   # output : True
 a is b   # output : False (메모리 주소가 달라서)
 ```
 
-</br>
+<br>
 
-</br>
+<br>
 
 #### 5. 타입
 
@@ -256,9 +256,9 @@ a=.1
 type(a)   # output : float
 ```
 
-</br>
+<br>
 
-</br>
+<br>
 
 #### 6. overflow
 
@@ -272,9 +272,9 @@ sys.maxsize   # output : 9223372036854775807
 
 현대 프로그래밍 언어에서 overflow가 되는 언어는 적다. python 또한 overflow는 없지만 내부적으로 처리하는 속도는 급격히 떨어진다.
 
-</br>
+<br>
 
-</br>
+<br>
 
 #### 7. 함수 사용 예시
 
@@ -288,7 +288,7 @@ a.__abs__()
 
 output : 1
 
-</br>
+<br>
 
 ```python
 -1.__abs__()
@@ -300,16 +300,16 @@ output : 1
 
 > SyntaxError : 문법적으로 잘못 접근
 
-</br>
+<br>
 
 ```python
 -1 .__abs__()    # output : -1
 (-1).__abs__()   # output : 1 (연산자 우선순위)
 ```
 
-</br>
+<br>
 
-</br>
+<br>
 
 #### 8. 부동소수
 
@@ -325,7 +325,7 @@ sys.float_info   #부동소수점에 대한 정보
 > sys.float_info(max=1.7976931348623157e+308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2.220446049250313e-16, radix=2, rounds=1)
 > ```
 
-</br>
+<br>
 
 ##### 2) 무한대
 
@@ -345,7 +345,7 @@ a=1.7976931348623157e+308   # 부동소수점의 max값
 a+1   # output : 1.7976931348623157e+308
 ```
 
-</br>
+<br>
 
 2. 부동소수는 정확하게 구할 수 없다.
 
@@ -354,7 +354,7 @@ a+1   # output : 1.7976931348623157e+308
 0.1+0.1+0.1   # output : 0.300000000004 
 ```
 
-</br>
+<br>
 
 3. 무한대 개념은 float 타입
 
@@ -368,9 +368,9 @@ a+1   # output : 1.7976931348623157e+308
    a.conjugate()   # output : 3-2j (켤레복소수)
    ```
 
-</br>
+<br>
 
-</br>
+<br>
 
 #### 9. bool
 
@@ -381,9 +381,9 @@ True+True   # output : 2
 True is 1   # output : 1
 ```
 
-</br>
+<br>
 
-</br>
+<br>
 
 #### 10. container
 
@@ -402,13 +402,13 @@ a='반지의제왕'
 a[slize(0,2)]  # output : '반지'
 ```
 
-</br>
+<br>
 
 ![image-20190702202847574](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190702202847574.png)
 
 > IndexError : 인덱스의 범위를 벗어날 때 발생
 
-</br>
+<br>
 
 ##### 2) 리스트
 
@@ -420,7 +420,7 @@ a   # output : [1, 'a']
 range(100)[50]   # output : 50
 ```
 
-</br>
+<br>
 
 ##### 3) set
 
@@ -439,7 +439,7 @@ a=frozenset({3,1,2})
 a   # output : frozenset({1, 2, 3})
 ```
 
-</br>
+<br>
 
 #### 용어 정리
 
@@ -457,12 +457,12 @@ a   # output : frozenset({1, 2, 3})
 
 ex) 문자열 : 안에 들어갈 데이터 타입이 중요하고 순서가 중요하다. (homogenous한 sequence type)
 
-</br>
+<br>
 
-</br>
+<br>
 
 #### 에러 정리
 
 * NameError : 정의되지 않은 언어를 출력할 때 에러 발생
 
-</br>
+<br>
