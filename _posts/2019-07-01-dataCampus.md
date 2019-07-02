@@ -127,7 +127,9 @@ b = 3 if a>0 else 5
 x
 ```
 
-![01] (https://i.imgur.com/UQghoBd.png "01.jpg")
+<figure>
+  <img src="https://i.imgur.com/UQghoBd.png">
+</figure>
 
 > NameError : 정의되지 않은 언어를 출력할 때 에러 발생
 
@@ -143,7 +145,9 @@ x
 
 즉 네임 스페이스에 없는 객체를 선언할 때 NameError 발생
 
-![image-20190702194444445](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190702194444445.png)
+<figure>
+  <img src="https://i.imgur.com/yp7NPFN.png">
+</figure>
 
 <br>
 
@@ -151,13 +155,19 @@ x
 %who
 ```
 
-![image-20190702194458822](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190702194458822.png)<br>
+<figure>
+  <img src="https://i.imgur.com/PkmrmK6.png">
+</figure>
+
+<br>
 
 ```python
 %who_ls
 ```
 
-![image-20190702194526560](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190702194526560.png)
+<figure>
+  <img src="https://i.imgur.com/pJAEGMW.png">
+</figure>
 
 <br>
 
@@ -296,7 +306,9 @@ output : 1
 
 .을 float로 생각하여 에러가 출력된다.
 
-![image-20190702195713768](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190702195713768.png)
+<figure>
+  <img src="https://i.imgur.com/yTeetnY.png">
+</figure>
 
 > SyntaxError : 문법적으로 잘못 접근
 
@@ -404,7 +416,9 @@ a[slize(0,2)]  # output : '반지'
 
 <br>
 
-![image-20190702202847574](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190702202847574.png)
+<figure>
+  <img src="https://i.imgur.com/TW2TYbH.png">
+</figure>
 
 > IndexError : 인덱스의 범위를 벗어날 때 발생
 
