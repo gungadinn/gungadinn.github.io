@@ -11,7 +11,7 @@ locale:             en_US
 url:                https://gungadinn.github.io
 
 # Jekyll
-permalink:          /:Pingu/
+permalink:          /:title/
 markdown:           kramdown
 highlighter:        rouge
 kramdown:
