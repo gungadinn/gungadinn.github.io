@@ -91,7 +91,7 @@ len(keyword.kwlist)
 
 <br>
 
-####1. 식별자와 표현식
+## 1. 식별자와 표현식
 
 a=1+2 (왼쪽 : 식별자 (identifier) / 오른쪽 : 표현식)
 
@@ -119,7 +119,7 @@ output : 1
 
 <br>
 
-#### 2. 네임스페이스
+## 2. 네임스페이스
 
 ```python
 a = 1
@@ -127,7 +127,7 @@ b = 3 if a>0 else 5
 x
 ```
 
-![image-20190702194155062](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190702194155062.png)
+![01] (https://i.imgur.com/UQghoBd.png "01.jpg")
 
 > NameError : 정의되지 않은 언어를 출력할 때 에러 발생
 
@@ -163,7 +163,7 @@ x
 
 <br>
 
-#### 3. 메모리
+## 3. 메모리
 
 ```python
 # 출력되는 output(주석)은 메모리 주소
@@ -228,7 +228,7 @@ id는 주소 값에서 첫번째 주소를 가리킨다. 때문에 변한 것이
 
 <br>
 
-#### 4. is와 ==
+## 4. is와 ==
 
 ```python
 a=10
@@ -246,7 +246,7 @@ a is b   # output : False (메모리 주소가 달라서)
 
 <br>
 
-#### 5. 타입
+## 5. 타입
 
 ```python
 a=1.
@@ -260,7 +260,7 @@ type(a)   # output : float
 
 <br>
 
-#### 6. overflow
+## 6. overflow
 
 ```python
 import sys
@@ -276,7 +276,7 @@ sys.maxsize   # output : 9223372036854775807
 
 <br>
 
-#### 7. 함수 사용 예시
+## 7. 함수 사용 예시
 
 ```python
 a=-1
@@ -311,7 +311,7 @@ output : 1
 
 <br>
 
-#### 8. 부동소수
+## 8. 부동소수
 
 #####1) 부동소수점의 overflow
 
@@ -372,7 +372,7 @@ a+1   # output : 1.7976931348623157e+308
 
 <br>
 
-#### 9. bool
+## 9. bool
 
 ```python
 type(True)   # output : bool (bool타입은 숫자)
@@ -385,9 +385,9 @@ True is 1   # output : 1
 
 <br>
 
-#### 10. container
+## 10. container
 
-##### 1) 문자열
+### 1) 문자열
 
 ```python
 a='abc'   # 한꺼번에 a,b,c를 남는다
@@ -410,7 +410,7 @@ a[slize(0,2)]  # output : '반지'
 
 <br>
 
-##### 2) 리스트
+### 2) 리스트
 
 안에 들어갈 수 있는 데이터 타입이 다양(헤테로) 하고 순서가 중요(시퀀스)하다.
 
@@ -422,7 +422,7 @@ range(100)[50]   # output : 50
 
 <br>
 
-##### 3) set
+### 3) set
 
 안에 들어갈 수 있는 데이터 타입이 다양(헤테로)하고 순서가 없다 (중복 X).
 
@@ -441,7 +441,7 @@ a   # output : frozenset({1, 2, 3})
 
 <br>
 
-#### 용어 정리
+## 용어 정리
 
 * mutable : 값을 변경할 수 있는 객체들
 
@@ -461,7 +461,7 @@ ex) 문자열 : 안에 들어갈 데이터 타입이 중요하고 순서가 중�
 
 <br>
 
-#### 에러 정리
+## 에러 정리
 
 * NameError : 정의되지 않은 언어를 출력할 때 에러 발생
 
