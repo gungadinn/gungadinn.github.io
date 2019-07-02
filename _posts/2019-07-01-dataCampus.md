@@ -16,7 +16,7 @@ import this
 
 python 철학 출력
 
-</br>
+
 
 ```python
 import antigravity
@@ -24,7 +24,7 @@ import antigravity
 
 [site](https://xkcd.com/353/)
 
-</br>
+
 
 ```python
 import keyword
