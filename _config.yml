@@ -43,7 +43,7 @@ nav:
     - '/blog/'
 #    - { Categories: '/blog/categories/' }
 #    - { Tags: '/blog/tags/' }
-    - { Categories: '/blog/categories/#python' }
+    - { python : '/blog/categories/#python' }
   About:          
     - '/about/'
 #  Github Project: 
