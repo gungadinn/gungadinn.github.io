@@ -38,9 +38,9 @@ author:
 # Navigation (2nd level links supported)
 nav:
   Home:           
-    - '/'
+    - '/blog'
   Blog:           
-    - '/blog/'
+    - '/'
 #    - { Categories: '/blog/categories/' }
 #    - { Tags: '/blog/tags/' }
     - { python : '/blog/categories/#python' }
