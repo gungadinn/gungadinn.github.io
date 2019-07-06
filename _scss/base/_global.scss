@@ -9,10 +9,10 @@ body {
 }
 
 html {
-  font-family: $font-serif;
+  font-family: 'NanumSquare', 'Source Sans Pro', Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, Verdana, Arial, Dotum, sans-serif;
   text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust:100%;
   -ms-text-size-adjust:100%;
   text-rendering:optimizelegibility;
