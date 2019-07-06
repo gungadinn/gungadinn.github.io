@@ -1,5 +1,5 @@
 # Site Info
-title: 공부하자
+title: 공부를 합시다
 tagline: '공부하자'
 description: ''
 baseurl: ""
@@ -35,7 +35,7 @@ author:
 # Navigation (2nd level links supported)
 nav:
   Home:           
-    - '/blog'
+    - '/blog/'
   Categories:           
     - '/'
 #    - { Categories: '/blog/categories/' }
