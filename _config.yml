@@ -26,13 +26,10 @@ version: 1.0.0
 author:
   name: Pingu
   description: 개발을 잘 하고 싶어요.
-  gravatar: # md5 hash of your email address
   contact:
     #linkedin:  https://www.linkedin.com/in/lizhihao
     github:    https://github.com/gungadinn
-    # facebook:  <hide>
     #twitter:   https://twitter.com/Li_Zhihao
-    #weibo:     http://weibo.com/41173780
     email:     ovo.pingu@gmail.com
 
 # Navigation (2nd level links supported)
