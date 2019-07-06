@@ -10,6 +10,8 @@ comments: true
 
 ## 빅데이터 청년인재 Day1
 
+---
+
 <br>
 
 ```python
