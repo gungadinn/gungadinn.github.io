@@ -17,8 +17,8 @@ comments: true
 * [SQL](https://gungadinn.github.io/data/2019/07/08/structured-Data/#sql)
 * [SQLite 기초](https://gungadinn.github.io/data/2019/07/08/structured-Data/#sqlite-기초)
 * [SQLite 응용](https://gungadinn.github.io/data/2019/07/08/structured-Data/#sqlite-응용)
-  * DDL 로 DB 만들기
-  * DML로 DB 조작하기
+  * [DDL 로 DB 만들기](https://gungadinn.github.io/data/2019/07/08/structured-Data/#ddl로-db-만들기)
+  * [DML로 DB 조작하기](https://gungadinn.github.io/data/2019/07/08/structured-Data/#dml로-db-조작하기)
 
 <br>
 
