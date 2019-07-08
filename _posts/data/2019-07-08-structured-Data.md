@@ -13,9 +13,9 @@ comments: true
 ##  목차
 
 * [데이터베이스 개요](https://gungadinn.github.io/data/2019/07/08/structured-Data/#데이터베이스-개요)
-* [RDBMS](https://gungadinn.github.io/data/2019/07/08/structured-Data/#RDBMS)
-* [SQL](https://gungadinn.github.io/data/2019/07/08/structured-Data/#SQL)
-* [SQLite](https://gungadinn.github.io/data/2019/07/08/structured-Data/#SQLite)
+* [RDBMS](https://gungadinn.github.io/data/2019/07/08/structured-Data/#RDBMS-(Relational-Database))
+* [SQL](https://gungadinn.github.io/data/2019/07/08/structured-Data/#SQL란)
+* [SQLite](https://gungadinn.github.io/data/2019/07/08/structured-Data/#SQLite-사용)
 
 <br>
 
@@ -132,7 +132,7 @@ comments: true
 
 <br>
 
-## RDBMS
+## RDBMS (Relational Database)
 
 ---
 
@@ -174,7 +174,7 @@ comments: true
 
 <br>
 
-## SQL
+## SQL란
 
 ---
 
@@ -231,7 +231,7 @@ comments: true
 
 <br>
 
-## SQLite
+## SQLite 사용
 
 ---
 
