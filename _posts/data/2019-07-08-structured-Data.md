@@ -13,9 +13,12 @@ comments: true
 ##  목차
 
 * [데이터베이스 개요](https://gungadinn.github.io/data/2019/07/08/structured-Data/#데이터베이스-개요)
-* [RDBMS](https://gungadinn.github.io/data/2019/07/08/structured-Data/#RDBMS-(Relational-Database))
-* [SQL](https://gungadinn.github.io/data/2019/07/08/structured-Data/#sql란)
-* [SQLite](https://gungadinn.github.io/data/2019/07/08/structured-Data/#sqlite-사용)
+* [RDBMS](https://gungadinn.github.io/data/2019/07/08/structured-Data/#rdbms)
+* [SQL](https://gungadinn.github.io/data/2019/07/08/structured-Data/#sql)
+* [SQLite 기초](https://gungadinn.github.io/data/2019/07/08/structured-Data/#sqlite-기초)
+* [SQLite 응용](https://gungadinn.github.io/data/2019/07/08/structured-Data/#sqlite-응용)
+  * DDL 로 DB 만들기
+  * DML로 DB 조작하기
 
 <br>
 
@@ -132,7 +135,7 @@ comments: true
 
 <br>
 
-## RDBMS (Relational Database)
+## RDBMS
 
 ---
 
@@ -174,7 +177,7 @@ comments: true
 
 <br>
 
-## SQL란
+## SQL
 
 ---
 
@@ -209,7 +212,7 @@ comments: true
 
   * TRUE나 FALSE 표현
 
-* Character (CHAR, VARCHAR
+* Character (CHAR, VARCHAR)
 
   * CHAR : 고정    ex) 주민등록번호
   * VARCHAR : 가변   ex) 댓글
@@ -231,7 +234,7 @@ comments: true
 
 <br>
 
-## SQLite 사용
+## SQLite 기초
 
 ---
 
@@ -343,4 +346,114 @@ print(cur.fetchall())
 
 <br>
 
-### 
+## SQLite 응용
+
+---
+
+### 1) DDL 로 DB 만들기
+
+#### (1) DB 및 table 생성
+
+ ```python
+cur = sqlite3.connect('create.db')
+print("Opened database successfully")
+
+cur.execute('''
+    CREATE TABLE COMPANY(
+        ID INT PRIMARY KEY NOT NULL,
+        NAME TEXT NOT NULL,
+        AGE INT NOT NULL,
+        ADDRESS CHAR(50),
+        SALARY REAL);
+''')
+
+print("Table created successfully")
+ ```
+
+<br>
+
+### 2) DML로 DB 조작하기
+
+#### (1) table에 데이터 넣기
+
+##### execute
+
+```python
+# qmark style
+cur.execute("INSERT INTO COMPANY (ID, NAME, AGE, ADDRESS, SALARY) VALUES (1, 'Paul', 32, 'California', 20000.00)");
+
+# named style
+cur.execute("INSERT INTO COMPANY (ID, NAME, AGE, ADDRESS, SALARY) VALUES (:id, :name, :age, :address, :salary)", {'id':2, 'name':'Allen', 'age':25, 'address':'Texas','salary':15000.00});
+```
+
+<br>
+
+##### execuemany, executescript 
+
+```python
+data = [(3, 'Teddy', 23, 'Norway', 2000000.00),
+       (4, 'Mark', 25, 'Rich-Mond', 65000.00)]
+       
+cur.executemany("INSERT INTO COMPANY (ID, NAME, AGE, ADDRESS, SALARY) VALUES (?, ?, ?, ?, ?)", data);
+
+cur.executescript("""
+    INSERT INTO COMPANY (ID, NAME, AGE, ADDRESS, SALARY)
+    VALUES (5, 'Mark1', 25, 'Rich-Mond', 65000.00);
+    
+    INSERT INTO COMPANY (ID, NAME, AGE, ADDRESS, SALARY)
+    VALUES (6, 'Mark2', 25, 'Rich-Mond', 65000.00);
+""");
+```
+
+<br>
+
+#### (2) table에서 데이터 가져오기
+
+ ```python
+cur.execute("SELECT id, name, address, salary from COMPANY")
+cur.fetchall()
+ ```
+
+이 방법은 execute 하는 순간 cursor가 데이터를 물고 있다. 그래서 아래 방법을 추천
+
+<br>
+
+```python
+cur.execute('select * from company')
+for row in cur:
+    print(row)
+    
+#    print("ID = ", row[0])
+#    print("NAME = ", row[1])
+#    print("ADDRESS = ", row[2])
+#    print("SALARY = ", row[3], end='\n\n')
+```
+
+<br>
+
+#### (3) table에서 데이터 수정하기
+
+```python
+cid = 1
+
+cur.execute("UPDATE COMPANY set SALARY = 25000.00 where ID = :id", {'id':cid})
+
+cur.execute("select id, name, address, salary from COMPANY")
+
+for row in cur:
+    print(row)
+```
+
+<br>
+
+#### (4) table에서 데이터 삭제하기
+
+```python
+cur.execute("DELETE from COMPANY where id = 2;")
+
+cur.execute("select id, name, address, salary from COMPANY")
+
+for row in cur:
+    print(row)
+```
+
