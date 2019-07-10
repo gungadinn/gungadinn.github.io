@@ -2,22 +2,43 @@
 layout: post
 title: "Python (3) - 함수형 기법"
 category: python
-tags: [python,빅데이터 청년인재,데이터청년캠퍼스,한국데이터진흥원]
+tags: [python]
 comments: true
 ---
 
+## 빅데이터 청년인재 Day 3
+
+### 목차
 
 
-# Python 고급 (1) - 함수형 기법
 
-함수형 패러다임 : 에서 mutable 없음. 바뀌면 골치아프니까 함수형 기법에서는 immutable 타입만 가지고 있다.
+## 함수형 프로그래밍
+
+
+
+함수형 기법 : 함수를 이용하여 프로그래밍을 하는 방식
+
+파이썬은 멀티 패러다임 언어
+
+객체지향 언어지만 함수형 언어를 지원한다
+
+함수를 이용하게 되면 side effect를 없앨 수 있다
+
+def 로 묶여 있다는 것을 모듈화
+
+
+
+
+
+ 에서 mutable 없음. 바뀌면 골치아프니까 함수형 기법에서는 immutable 타입만 가지고 있다.
 
 <br>
 
 ```python
 # 절차적 프로그래밍
-a = input()
-a = int(a)   # output : 3
+>>> a = input()
+>>> a = int(a)   
+3
 ```
 
 > 함수형 프로그래밍에서는 정의역을 한번에 처리하는 것에 더 효율적임
@@ -27,11 +48,12 @@ a = int(a)   # output : 3
 <br>
 
 ```python
-import time
-def x(a=time.time):
-    return a
+>>> import time
+>>> def x(a=time.time):
+>>>     return a
 
-time.time()
+>>> time.time()
+562419842.0954182
 ```
 
 > output : 1971년 이후로 현재 시간까지 나노세컨드로 
@@ -87,17 +109,25 @@ time.time()
 ### list_iterator
 
 ```python
-a = [1, 2, 3]
-b = iter(a)
-type(b)   # output : list_iterator
+>>> a = [1, 2, 3]
+>>> b = iter(a)
+>>> type(b)   
+list_iterator
 
-next(b)   # output : 1
-next(b)   # output : 2
-next(b)   # output : 3
-next(b)   # Error : StopIteration
+>>> next(b)   
+1
+>>> next(b)  
+2
+>>> next(b)   
+3
+>>> next(b)    
+StopIteration
 
-b   # output : <list_iterator at 0x10e41aba8>
-list(b)   # output : []
+>>> b    
+<list_iterator at 0x10e41aba8>
+
+>>> list(b)   
+[]
 ```
 
 > StopIteration : Iterator에 의해 생성된 항목이 더이상 없다는 것을 알려주기 위해, 내장함수 next() 나 이터레이터의 \__next__ 메소드가 일으킨다.
@@ -107,15 +137,19 @@ list(b)   # output : []
 <br>
 
 ```python
-import dis
+>>> import dis
 
-def iterator_exam():
-    for i in [1, 2, 3]:
-        print(i)
+>>> def iterator_exam():
+>>>     for i in [1, 2, 3]:
+>>>         print(i)
    
-dis.dis(iterator_exam)
+>>> dis.dis(iterator_exam)
 ```
 
+> dis : 어셈블리어로 바꿔준다.
+>
+> for문이 돌 때 이터레이터가 쓰인다.
+>
 > output
 >
 > ![image-20190703132140965](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190703132140965.png)
@@ -125,11 +159,13 @@ dis.dis(iterator_exam)
 ### set_iterator
 
 ```python
-a = {1, 2, 3}
-b = iter(a)
-type(b)   # output : set_iterator
+>>> a = {1, 2, 3}
+>>> b = iter(a)
+>>> type(b)   
+set_iterator
 
-next(b)   # output : 1
+>>> next(b)   
+1
 ```
 
 <br>
@@ -137,38 +173,52 @@ next(b)   # output : 1
 ### str_iterator
 
 ```python
-a = 'legolas'
-b = iter(a)
-b   # output : <str_iterator at 0x10e582588>
+>>> a = 'legolas'
+>>> b = iter(a)
+>>> b   # output : 
+<str_iterator at 0x10e582588>
 
-next(b)   # output : 'l'
-list(b)   # output : ['e', 'g', 'o', 'l', 'a', 's']
-type(b)   # output : str_iterator
+>>> next(b)   
+'l'
+>>> list(b)  
+['e', 'g', 'o', 'l', 'a', 's']
+>>> type(b)   
+str_iterator
 ```
 
 <br>
 
 ```python
-a = {1, 2, 3}
-b = iter(a)
-type(b)   # output : str_iterator
+>>> a = {1, 2, 3}
+>>> b = iter(a)
+>>> type(b)   
+str_iterator
 
-next(b)   # output : 1
-next(b)   # output : 2
-next(b)   # output : 3
-next(b)   # Error : StopIteration
+>>> next(b)    
+1
+>>> next(b)  
+2
+>>> next(b)  
+3
+>>> next(b)  
+StopIteration
 
-a = [1, 2, 3]
-b = iter(a)
-type(b)   # list_iterator
-next(b)
-list(b)   # outut : [2, 3])
+>>> a = [1, 2, 3]
+>>> b = iter(a)
+>>> type(b)   # 
+<class 'list_iterator'>
+>>> next(b)
+>>> list(b)  
+[2, 3]
 
-a = [1, 2, 3]
-b = iter(a)
-next(b)   # output : [1]
-next(b)   # output : [2, 3]
-list(b)   # output : [3]
+>>> a = [1, 2, 3]
+>>> b = iter(a)
+>>> next(b)   
+[1]
+>>> next(b)  
+[2, 3]
+>>> list(b)  
+[3]
 ```
 
 * 파이썬에서 이터레이터의 장점 : __Lazy__
@@ -191,12 +241,11 @@ list(b)   # output : [3]
 이터러블(iterable)과 이터레이터(iterator) 차이점 : next의 유무
 
 ```python
-set(dir(Iterator)) - set(dir(Iterable))
+>>> set(dir(Iterator)) - set(dir(Iterable))
+{'\__next__'}
 ```
 
-> output : {'\__next__'}
->
-> 즉 이터레이터에는 next가 있고 이터러블에는 없다. 따라서 이터러블 쓸 곳에서 이터레이터를 써도 된다.
+즉 이터레이터에는 next가 있고 이터러블에는 없다. 따라서 이터러블 쓸 곳에서 이터레이터를 써도 된다.
 
 * 이터레이터 지원하는 데이터형 : 리스트, 튜플, 문자열, 딕셔너리, 집합
 
@@ -211,21 +260,26 @@ set(dir(Iterator)) - set(dir(Iterable))
 제너레이터는 이터레이터를 작성하는 작업을 단순화 하는 특별한 클래스의 함수. 
 
 ```python
-def generator_exam():
-      yield 1
-      yield 2
-      yield 3
+>>> def generator_exam():
+>>>       yield 1
+>>>       yield 2
+>>>       yield 3
     
-x = generator_exam()
-type(x)   # output : generator
+>>> x = generator_exam()
+>>> type(x)   
+generator
 
-next(x)   # output : 1
-next(x)   # output : 2
-next(x)   # output : 3
-next(x)   # StopIteration
+>>> next(x)   
+1
+>>> next(x)   
+2
+>>> next(x)   
+3
+>>> next(x)   
+StopIteration
 ```
 
-> StopIteration
+> StopIteration : try except와 같이 쓰면 좋을 듯
 
 ![image-20190703135234252](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190703135234252.png)
 
@@ -237,16 +291,21 @@ yield 키워드를 포함하는 함수는 제너레이터 함수이다. yield와
 
 ```python
 # 아래처럼도 사용 가능하다
-def generator_exam():
-	  yield from [1, 2, 3, 4]
+>>> def generator_exam():
+>>> 	  yield from [1, 2, 3, 4]
   
-x = generator_exam()
+>>> x = generator_exam()
 
-next(x)   # output : 1
-next(x)   # output : 2
-next(x)   # output : 3
-next(x)   # output : 4
-next(x)   # StopIteration
+>>> next(x)   
+1
+>>> next(x)  
+2
+>>> next(x)  
+3
+>>> next(x)   
+4
+>>> next(x)   
+StopIteration
 ```
 
 > StopIteration![image-20190703140033729](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190703140033729.png)
@@ -262,54 +321,50 @@ sum(x for x in range(1,11))  # 위의 식을 현재 식처럼 축약 가능하�
 
 <br>
 
-## 5. 반복식
+## 5. 반복식 (Comprehension)
 
 ---
 
-초기화하는데 유용하다.
+초기화하는데 유용하다. for문보다 속도가 더 빠르다.
 
 ### 1) 리스트 (List)
 
 ```python
-[x for x in range(10)] 
+>>> [x for x in range(10)] 
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-[x+1 for x in range(10)]   
+>>> [x+1 for x in range(10)]   
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-[x/3 for x in range(10)]
+>>> [x/3 for x in range(10)]
+[0.0, 0.3333333333333333, 0.6666666666666666, … , 3.0 ]
+  
+>>> [str(x) for x in range(10)]
+['0', '1', '2', '3,' '4', '5', '6', '7', '8', '9']
 
-[str(x) for x in range(10)]
-
-[0 for x in range(10)]   # 이처럼 초기화 하는데 유용하다
+>>> [0 for x in range(10)]   # 이처럼 초기화 하는데 유용하다
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ```
-
-> output : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
->
-> output : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
->
-> output : [0.0, 0.3333333333333333, 0.6666666666666666, … , 3.0 ]
->
-> output : ['0', '1', '2', '3,' '4', '5', '6', '7', '8', '9']
->
-> output : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 <br>
 
 ### 2) 집합 (Set)
 
 ```python
-{x for x in range(10)}
-# output : 
+>>> {x for x in range(10)}
+{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
 ```
 
-> output : {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}<br>
+<br>
 
 ### 3) 딕셔너리 (Dictonary)
 
 ```python
-{x:1 for x in range(10)}
+>>> {x:1 for x in range(10)}
+{0:1, 1:1, 2:1, 3:1, 4:1, 5:1, 6;1, 7:1, 8:1, 9:1}
 ```
 
-> output : {0:1, 1:1, 2:1, 3:1, 4:1, 5:1, 6;1, 7:1, 8:1, 9:1}<br>
+ <br>
 
 ### 4) 튜플 ? (tuple)
 
@@ -320,13 +375,13 @@ sum(x for x in range(1,11))  # 위의 식을 현재 식처럼 축약 가능하�
 ### 5) 참고
 
 ```python
-a = [x for x in range(10)]
+>>> a = [x for x in range(10)]
 
 # 위아래 코드는 같은 코드이다
 
-temp=[]
-for i in range(10)
-    temp.append(i)
+>>> temp=[]
+>>> for i in range(10)
+>>>     temp.append(i)
 ```
 
 
@@ -342,15 +397,18 @@ for i in range(10)
 > example 1
 
 ```python
-a = print
-a('legolas')   # output : legolas
+>>> a = print
+>>> a('legolas')  
+legolas
 
-a.__name__   # output : 'print' (실제로는 print지만 a로도 쓸 수 있다)
+>>> a.__name__   
+'print'    #(실제로는 print지만 a로도 쓸 수 있다)
 ```
 
 ```python
-printf = print
-printf("hello world")   # output : hello world
+>>> printf = print
+>>> printf("hello world")  : 
+hello world
 ```
 
 <br>
@@ -358,10 +416,12 @@ printf("hello world")   # output : hello world
 > example 2
 
 ```python
-sum = 0
-sum + 1   # output : 1
-del sum   # 만들었던 'sum = 0' 을 지운다
-del sum   # NameError (함수 sum만 남았기 때문에 name 'sum'은 정의되지 않음)
+>>> sum = 0
+>>> sum + 1  : 
+1
+>>> del sum   
+>>> del sum   
+NameError   #(함수 sum만 남았기 때문에 name 'sum'은 정의되지 않음)
 ```
 
 <br>
@@ -369,11 +429,12 @@ del sum   # NameError (함수 sum만 남았기 때문에 name 'sum'은 정의되
 > example 3 : 아래와 같은 예시에서는 더 이상 sum 함수를 사용하지 못한다.
 
 ```python
-sum = 0
-for i in range(1,101):
-    sum+=i
+>>> sum = 0
+>>> for i in range(1,101):
+>>>     sum+=i
     
-sum    # output : 5050
+>>> sum    
+5050
 ```
 
 <br>
@@ -381,18 +442,21 @@ sum    # output : 5050
 > example 4 
 
 ```python
-a = [str, int, float]
-a[0]   # output : str
-a[0](2)   # output : '2'
+>>> a = [str, int, float]
+>>> a[0]   
+str
+>>> a[0](2)  
+'2'
 ```
 
 <br>
 
 ```python
-def a(x):
-    print(x())
+>>> def a(x):
+>>>     print(x())
   
-a(print)   # output : None
+>>> a(print)   
+None
 ```
 
 <br>
@@ -412,24 +476,28 @@ a(print)   # output : None
 함수 내의 범위
 
 ```python
-def y():
-    x=1
-    print(x)
+>>> def y():
+>>>     x=1
+>>>     print(x)
   
-y()   # output : 1
+>>> y()   
+1
 ```
 
 <br>
 
 ```python
-def y():
-    z=1
-    print(z)
+>>> def y():
+>>>     z=1
+>>>     print(z)
 
-z   # NameError : 캡슐화
-y.z = 3
-y()   # output : 1
-y.z   # output : 3
+>>> z    
+NameError   # 캡슐화
+>>> y.z = 3
+>>> y()   
+1
+>>> y.z   
+3
 ```
 
 즉 z와 y.z는 다르다.
@@ -441,24 +509,28 @@ y.z   # output : 3
 중첩 함수(nested function / 함수 안에 함수) 라면 그 밖에 있는 함수 범위
 
 ```python
-def y():
-    def z():
-        return 1
-    return z()
+>>> def y():
+>>>     def z():
+>>>         return 1
+>>>     return z()
 
-y()()   # output : 1
+>>> y()()  
+1
 ```
 
 <br>
 
 ```python
-def y():
-    print('legolas')
-        return y
+>>> def y():
+>>>     print('legolas')
+>>>         return y
   
   
-y()   # output : legolas 
-y()()   # output : legolas(\n)legolas
+>>> y()   
+legolas 
+>>> y()()   
+legolas
+legolas
 ```
 
 <br>
@@ -466,47 +538,50 @@ y()()   # output : legolas(\n)legolas
 #### closure
 
 ```python
-def y(x):
-    def z():
-        return 1
-    return z
+>>> def y(x):
+>>>     def z():
+>>>         return 1
+>>>     return z
 
-y(3)()   # output : 1
-
+>>> y(3)()   
+1
 ```
 
 <br>
 
 ```python
 def y(x):
-    def z():
-        return x+1
-    return z
+>>>     def z():
+>>>         return x+1
+>>>     return z
 
-y(3)()    # output : 4
+>>> y(3)()    
+4
 ```
 
 <br>
 
 ```python
-def y(x):
-    def z(n):
-        return x+n
-    return z
+>>> def y(x):
+>>>     def z(n):
+>>>         return x+n
+>>>     return z
 
 
-two_add = y(2)   
-two_add(3)   # output : 3
+>>> two_add = y(2)   
+>>> two_add(3)   
+3
 
-two_add = y(4)
-two_add(3)   # output : 7
+>>> two_add = y(4)
+>>> two_add(3)   
+7
 
 #lambda 사용
-def y(x):
-    return lambda n:n+x
+>>> def y(x):
+>>>     return lambda n:n+x
 
-two_add = y(2)
-two_add(4)
+>>> two_add = y(2)
+>>> two_add(4)
 ```
 
 > 첫 번째 인자를 무엇으로 받느냐에 따라 두번째 인자를 전체적으로 바꿀 수 있다.
@@ -518,35 +593,39 @@ two_add(4)
 함수 밖을 일컫는 범위
 
 ```python
-x = 1
-def y():
-  print(x)
+>>> x = 1
+>>> def y():
+>>>   print(x)
 
-y()   # output : 1
+>>> y()   
+1
 ```
 
 <br>
 
 ```python
-x = 1   # 접근 할 수 있지만 변경은 불가
-def y():
-  x=x+1
-  print(x)
+>>> x = 1   # 접근 할 수 있지만 변경은 불가
+>>> def y():
+>>>   x=x+1
+>>>   print(x)
   
-y()    # UnBoundLocalError : 할당 전에 참조되기 때문에 에러
+>>> y()    
+UnBoundLocalError   #할당 전에 참조되기 때문에 에러
 ```
 
 <br>
 
 ```python
-x = 1
-def y():
-  global x   
-  x=x+1
-  print(x)
+>>> x = 1
+>>> def y():
+>>>   global x   
+>>>   x=x+1
+>>>   print(x)
   
-y()   # output : 2
-y()   # output : 3
+>>> y()   
+2
+>>> y()   
+3
 ```
 
 > global 선언 시 함수 안밖의 객체가 싱크된다.
@@ -561,6 +640,206 @@ y()   # output : 3
 
 <br>
 
+### 5) nonlocal
+
+nonlocal 문은 나열된 식별자들이 전역을 제외하고 가장 가까이서 둘러싸는 스코프에서 이미 연결된 변수를 가르키도록 만든다. nonlocal 문에 나열된 이름들은, global 문에 나열된 것들과는 달리, 둘러싼 스코프에서 이미 존재하는 연결들을 가르켜야한다. 또한, nonlocal 문에 나열되는 이름들은 지역 스코프에 이미 존재하는 연결들과 겹치지 않아야한다.
+
+```python
+>>> a = 1
+>>> def x():
+>>>     return a
+    
+>>> a
+1
+```
+
+
+
+```python
+>>> a = 1
+>>> def x():
+>>>     global a
+>>>     a = 2
+>>>     return a
+    
+>>> x()
+2
+```
+
+
+
+```python
+>>> a=1
+>>> def x():
+>>>     def y():
+>>>         return a
+>>>     return y()
+
+>>> x()
+1
+```
+
+
+
+```python
+>>> a=1
+>>> def x():
+>>>     a=3
+>>>     def y():
+>>>         return a
+>>>     return y()
+  
+>>> x()
+3
+```
+
+
+
+```python
+>>> a=1
+>>> def x():
+>>>     a=3
+>>>     def y():
+>>>         a=a+1 #
+>>>         return a
+>>>     return y()
+    
+>>> x()
+UnboundLocalError
+```
+
+
+
+```python
+>>> a=1
+>>> def x():
+>>>     a=3
+>>>     def y():
+>>>         global a
+>>>         a=a+1 #
+>>>         return a
+>>>     return y()
+  
+>>> x()
+2
+```
+
+
+
+```python
+>>> a=1
+>>> def x():
+>>>     a=3
+>>>     def y():
+>>>         nonlocal a
+>>>         a=a+1 #
+>>>         return a
+>>>     return y()
+  
+>>> x()
+4
+```
+
+
+
+```python
+>>> a=1
+>>> def x():
+>>>     b=3
+>>>     def y():
+>>>         return b
+>>>     return y()
+  
+>>> x()
+3
+```
+
+
+
+```python
+>>> a=1
+>>> def x():
+>>>     b=3
+>>>     def y():
+>>>         return b
+>>>     print(b+1)
+>>>     return y()
+  
+>>> x()
+4    # 출력값
+3    # 리턴값
+```
+
+
+
+```python
+>>> a=1
+>>> def x():
+>>>     def y():
+>>>         print(c)
+>>>         c=3
+>>>         return b
+>>>     print(b+1)
+>>>     return y()
+  
+>>> x()
+NameError
+```
+
+
+
+```python
+>>> a=1
+>>> def x():
+>>>     def y():
+>>>         print(c)
+>>>         c=3
+>>>         return 1
+>>>     return y()
+  
+>>> x()
+UnbounLocalError
+```
+
+
+
+```python
+>>> print(yy)
+>>> yy=3  
+NameError
+```
+
+
+
+```python
+>>> a=1
+>>> def x():
+        def y():
+            return 1
+        print(b)
+>>>     return y()
+  
+>>> x()
+NameError
+```
+
+
+
+```python
+>>> a=1
+>>> def x():
+        def y():
+            return 1
+        print(b)
+        b=1
+        return y()
+  
+>>> x()
+UnboundLocalError
+```
+
+
+
 <br>
 
 ## 기타
@@ -572,34 +851,34 @@ y()   # output : 3
 1. if를 뒤에 쓴다.
 
    ```python
-   [x for x in range(10) if x%2 == 0]
+   >>> [x for x in range(10) if x%2 == 0]
+   [0, 2, 4, 6, 8]
    ```
-
-   > output : [0, 2, 4, 6, 8]
-   >
-   > for 뒤에 있는 x를 만나면 if문에 간 후 참이면 x를 실행한다. 
-
+```
+   
+   for 뒤에 있는 x를 만나면 if문에 간 후 참이면 x를 실행한다. 
    
 
+   
 2. if를 앞에 쓴다
 
    ```python
-   [x if x%2 == 0 else 3 for x in range(10)]
-   ```
+   >>> [x if x%2 == 0 else 3 for x in range(10)]
+   [0, 3, 2, 3, 4, 3, 6, 3, 8, 3]
+```
 
-   > output : [0, 3, 2, 3, 4, 3, 6, 3, 8, 3]
-   >
-   > if가 참이면 앞의 문장(if문)을 실행하고 거짓이면 뒤의 문장(else)을 실행한다.
+   if가 참이면 앞의 문장(if문)을 실행하고 거짓이면 뒤의 문장(else)을 실행한다.
+
 
 
 
 3. 재귀
 
    ```python
-   def fibo(n):
-       if n<2:
-           return 1
-       return fibo(n-1)+fibo(n-2)
+   >>> def fibo(n):
+           if n<2:
+   >>>         return 1
+   >>>     return fibo(n-1)+fibo(n-2)
    ```
 
 4. 내장함수
@@ -611,41 +890,40 @@ y()   # output : 3
 ### 2) 식은 식끼리 붙일 수 있다.
 
 ```python
-[ (x,y) for x in range(1,11) for y in range(10)]
+>>> [(x,y) for x in range(1,11) for y in range(10)]
+[(1, 0),
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(1, 7),
+(1, 8),
+(1, 9),
+(2, 0),
+(2, 1),
+(2, 2),
+(2, 3),
+(2, 4),
+(2, 5),
+...
+(10, 9)]
 ```
-
-> output :
->
-> ```
-> [(1, 0),
->  (1, 1),
->  (1, 2),
->  (1, 3),
->  (1, 4),
->  (1, 5),
->  (1, 6),
->  (1, 7),
->  (1, 8),
->  (1, 9),
->  (2, 0),
->  (2, 1),
->  (2, 2),
->  (2, 3),
->  (2, 4),
->  (2, 5),
->  ...
->  (10, 9)]
-> ```
 
 <br>
 
 ```python
-((x,y) for x in range(1,11) for y in range(10))
+>>> ((x,y) for x in range(1,11) for y in range(10))
+<generator object <genexpr> at 0x10e568ed0>
 ```
 
-> <generator object <genexpr> at 0x10e568ed0>
-
 <br>
+
+### 3) for를 쓰지 않는 기법
+
+1.  이터레이터 제너레이터
+2. 실제 for는 있지만 for문을 쓰지 않는다. (for문을 쓰지 않고 동시에 여러개를 처리하는 기법)
 
 > 
 

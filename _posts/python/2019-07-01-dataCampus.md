@@ -2,15 +2,32 @@
 layout: post
 title: "python (1) - 할당"
 category: python
-tags: [python,빅데이터 청년인재,데이터청년캠퍼스,한국데이터진흥원]
+tags: [python]
 comments: true
 ---
 
 ---
 
-## 빅데이터 청년인재 Day1
+## 빅데이터 청년인재 Day 1
 
 ---
+
+### 목차
+
+- 식별자와 표현식
+- 네임스페이스
+- 메모리
+- is와 ==
+- type
+- overflow
+- 함수 사용 예시
+- 부동소수
+- bool
+- container
+- 용어정리
+- 에러 정리
+
+------
 
 <br>
 
@@ -86,7 +103,7 @@ comments: true
 
 <br>
 
-## 1. 식별자와 표현식
+## 1) 식별자와 표현식
 
 ---
 
@@ -520,7 +537,7 @@ frozenset({1, 2, 3})
 
   ex) set, list 등
 
-* 시퀀스 타입 (sequence type) : 순서가 중요. indexing, slicing 가능
+* 시퀀스 타입 (sequence type) : 순서가 중요하다. indexing, slicing 가능
 
   ex) list, str, tuple, bytes, range 등
 
@@ -530,7 +547,7 @@ frozenset({1, 2, 3})
 
   <br>
 
-ex) 문자열 : 안에 들어갈 데이터 타입이 중요하고 순서가 중요하다. (homogenous한 sequence type)
+ex) 문자열 : 안에 들어갈 데이터 타입이 같고 순서가 중요하다. (homogenous한 sequence type)
 
 ex) 리스트 : 안에 들어갈 데이터 타입이 여러가지이고 순서가 중요하다. (heterogenous한 sequence type)
 
