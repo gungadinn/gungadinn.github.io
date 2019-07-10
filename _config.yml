@@ -25,7 +25,7 @@ version: 1.0.0
 # About/contact
 author:
   name: Pingu
-  description: 개발을 잘 하고 싶어요.
+  description: Pingu
   contact:
     #linkedin:  https://www.linkedin.com/in/lizhihao
     github:    https://github.com/gungadinn
@@ -35,12 +35,13 @@ author:
 # Navigation (2nd level links supported)
 nav:
   Home:           
-    - '/blog/'
-  Categories:           
     - '/'
+  Categories:           
+    - '/blog/'
 #    - { Categories: '/blog/categories/' }
 #    - { Tags: '/blog/tags/' }
-    - { python : '/blog/categories/#python' }
+    - { python : '/categories/#python' }
+    - { data : '/categories/#data' }
   About:          
     - '/about/'
 #  Github Project: 
@@ -50,9 +51,9 @@ nav:
 tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
 
-#hero:
-#  image: /public/img/we_will_be_giants_by_yalestewart.jpg
-#  caption: Original Artwork &copy; <a href="http://yalestewart.deviantart.com/art/We-Will-Be-Giants-370176475">Yale Stewart</a>
+hero:
+  image: /public/img/sky.jpeg
+  caption: 
 
 # Puglins
 mathjax: true # whether support mathjax
