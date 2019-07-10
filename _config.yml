@@ -40,8 +40,8 @@ nav:
     - '/blog/'
 #    - { Categories: '/blog/categories/' }
 #    - { Tags: '/blog/tags/' }
-    - { python : '/categories/#python' }
-    - { data : '/categories/#data' }
+    - { python : '/blog/categories/#python' }
+    - { data : '/blog/categories/#data' }
   About:          
     - '/about/'
 #  Github Project: 
