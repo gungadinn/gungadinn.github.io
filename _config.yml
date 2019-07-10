@@ -37,7 +37,7 @@ nav:
   Home:           
     - '/'
   Categories:           
-    - '/blog/'
+    - '/blog/categories/'
 #    - { Categories: '/blog/categories/' }
 #    - { Tags: '/blog/tags/' }
     - { python : '/blog/categories/#python' }
@@ -53,7 +53,7 @@ category_page: '/blog/categories/'
 
 hero:
   image: /public/img/sky.jpeg
-  caption: 
+  caption: 개발을 잘 하고 싶어요
 
 # Puglins
 mathjax: true # whether support mathjax

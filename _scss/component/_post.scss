@@ -11,17 +11,24 @@
     h1 { font-size: 1.6rem; }
     h2 { 
       margin: 2em 0 1em 0;
-      font-size: 1.0rem; 
+      font-size: 1.2rem; 
       color : #1976D2;
     }
-    h3, h4, h5, h6 {
+    h3 {
+      margin: 2em 0 1em 0;
+      font-size: 1.0rem;
+    }
+    h4 {
+      margin: 2em 0 1em 0;
+      font-size: 0.9rem;
+    } h5, h6 {
       margin: 2em 0 1em 0;
       font-size: 0.8rem;
     }
   }
 
   .post-title {
-    color: #1c1b1b;
+    color: #1c1b1b; //각 포스팅의 제목 색깔
     margin-top: 0;
   }
 
