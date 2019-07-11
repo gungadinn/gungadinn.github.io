@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "정형 데이터 (structured data)"
+title: "정형 데이터 (RDBMS, SQL)"
 category: data
 tags: [데이터]
 comments: true

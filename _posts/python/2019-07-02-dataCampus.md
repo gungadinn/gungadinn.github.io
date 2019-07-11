@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Python (2) - 할당, 조건문, 반복문, 파라미터"
+title: "Python (2) - 할당, 조건문, 반복문, 매개변수"
 category: python
-tags: [python,빅데이터 청년인재,데이터청년캠퍼스,한국데이터진흥원]
+tags: [python]
 comments: true
 ---
 
@@ -36,6 +36,7 @@ comments: true
   * and
   * or
 * 반복문
+* 3가지의 else
   * 반복문에서의 else
   * if문에서의 else
   * try-catch문에서의 else
@@ -49,7 +50,9 @@ comments: true
 * 기타
 * 에러 정리
 
-<br>
+---
+
+
 
 ## 1. 할당의 종류
 
@@ -604,37 +607,37 @@ TypeError
 
 ```python
 >>> if 2 :
-...     print('T')
-... else :
-...     print('F')
-... 
+>>>     print('T')
+>>> else :
+>>>     print('F')
+>>> 
 T
 ```
 
 ```python
 >>> if 0.0 :
-...     print('T')
-... else :
-...     print('F')
-... 
+>>>     print('T')
+>>> else :
+>>>     print('F')
+>>> 
 F
 ```
 
 ```python
 >>> if [] :
-...     print('T')
-... else :
-...     print('F')
-... 
+>>>     print('T')
+>>> else :
+>>>     print('F')
+>>> 
 F
 ```
 
 ```python
 >>> if None :
-...     print('T')
-... else :
-...     print('F')
-... 
+>>>     print('T')
+>>> else :
+>>>     print('F')
+>>> 
 F
 ```
 
@@ -654,28 +657,28 @@ False
 
 ```python
 >>> if '' :
-...     print('T')
-... else :
-...     print('F')
-... 
+>>>     print('T')
+>>> else :
+>>>     print('F')
+>>> 
 F
 ```
 
 ```python
 >>> if '''''' :
-...     print('T')
-... else :
-...     print('F')
-... 
+>>>     print('T')
+>>> else :
+>>>     print('F')
+>>> 
 F
 ```
 
 ```python
 >>> if a is not None:
-...     print('T')
-... else :
-...     print('F')
-... 
+>>>     print('T')
+>>> else :
+>>>     print('F')
+>>> 
 T
 ```
 
@@ -733,10 +736,10 @@ ZeroDivisionError
 
 ```python
 >>> if True and False :
-...     print(1)
-... else :
-...     print(2)
-... 
+>>>     print(1)
+>>> else :
+>>>     print(2)
+>>> 
 2
 ```
 
@@ -751,10 +754,10 @@ ZeroDivisionError
 
 ```python
 >>> if True or False :
-...     print(1)
-... else :
-...     print(2)
-... 
+>>>     print(1)
+>>> else :
+>>>     print(2)
+>>> 
 2
 ```
 
@@ -770,8 +773,8 @@ in 다음에 들어갈 수 있는 것은 이터러블이다. 이터러블은 mem
 
 ```python
 >>> for i in '레골라스':
-...     print(i)
-... 
+>>>     print(i)
+>>> 
 레
 골
 라
@@ -782,8 +785,8 @@ in 다음에 들어갈 수 있는 것은 이터러블이다. 이터러블은 mem
 
 ```python
 >>> for i in 1, 2, 3, '레골라스', 4:
-...     print(i)
-... 
+>>>     print(i)
+>>> 
 1
 2
 3
@@ -796,8 +799,8 @@ in 다음에 들어갈 수 있는 것은 이터러블이다. 이터러블은 mem
 ```python
 # set은 내부적으로 순서를 정하니까 사용 가능하다
 >>> for i in {4, 3, 2, 5, 1}:
-...     print(i)
-... 
+>>>     print(i)
+>>> 
 1
 2
 3
@@ -810,8 +813,8 @@ in 다음에 들어갈 수 있는 것은 이터러블이다. 이터러블은 mem
 ```python
 # 딕셔너리도 가능
 >>> for i in {'a':1, 'b':2}:
-...     print(i)
-... 
+>>>     print(i)
+>>> 
 a
 b
 ```
@@ -820,8 +823,8 @@ b
 
 ```python
 >>> for i in {'a':1, 'b':2}.items():
-...     print(i)
-... 
+>>>     print(i)
+>>> 
 ('a', 1)
 ('b', 2)
 ```
@@ -830,8 +833,8 @@ b
 
 ```python
 >>> for i in {'a':1, 'b':2}.values():
-...     print(i)
-... 
+>>>     print(i)
+>>> 
 1
 2
 ```
@@ -841,7 +844,7 @@ b
 ```python
 # 괄호를 씌우든 안 씌우든 튜플로 인식한다
 >>> for i,j in {'a':1, 'b':2}.items():
-...     print(i)
+>>>     print(i)
 a 1
 b 2
 ```
@@ -858,10 +861,10 @@ b 2
 
 ```python
 >>> for i,j in {'a':1, 'b':2}.items():
-...     print(i,j)
-... else :
-...     print('레골라스')
-... 
+>>>     print(i,j)
+>>> else :
+>>>     print('레골라스')
+>>> 
 a 1
 b 2
 레골라스
@@ -871,13 +874,13 @@ b 2
 
 ```python
 >>> for i in range(10000):
-...     if i==10:
-...         break
-...     else:
-...         print(i)
-... else:
-...     print('레골라스')
-... 
+>>>     if i==10:
+>>>         break
+>>>     else:
+>>>         print(i)
+>>> else:
+>>>     print('레골라스')
+>>> 
 0
 1
 2
@@ -897,10 +900,10 @@ i==10에서 break가 걸렸으므로 레골라스를 출력하지 않는다. (�
 ```python
 >>> a = 10
 >>> while a>0:
-...     a -= 1
-...     print(a)
-... else :
-...     print('레골라스')
+>>>     a -= 1
+>>>     print(a)
+>>> else :
+>>>     print('레골라스')
 9
 8
 7
@@ -920,11 +923,11 @@ i==10에서 break가 걸렸으므로 레골라스를 출력하지 않는다. (�
 ```python
 >>> a = 10
 >>> while a>10 :
-...     a -= 1
-...     print(a)
-... else :
-...     print('레골라스')
-... 
+>>>     a -= 1
+>>>     print(a)
+>>> else :
+>>>     print('레골라스')
+>>> 
 레골라스
 ```
 
@@ -933,13 +936,13 @@ while문이 조건에 안 맞아 한번도 안 돌아도 0번 돈 것이기 때�
 ```python
 >>> a = 10
 >>> while a>10 :
-...     a -= 1
-...     if a==5 :
-...         break
-...     print(a)
-... else :
-...     print('레골라스')
-... 
+>>>     a -= 1
+>>>     if a==5 :
+>>>         break
+>>>     print(a)
+>>> else :
+>>>     print('레골라스')
+>>> 
 9
 8
 7
@@ -958,13 +961,13 @@ while문이 조건에 안 맞아 한번도 안 돌아도 0번 돈 것이기 때�
    # raise : 에러를 발생시킨다
    >>> a = 10
    >>> while a>10 :
-   ...     a -= 1
-   ...     if a==5 :
-   ...         raise
-   ...     print(a)
-   ... else :
-   ...     print('레골라스')
-   ... 
+   >>>     a -= 1
+   >>>     if a==5 :
+   >>>         raise
+   >>>     print(a)
+   >>> else :
+   >>>     print('레골라스')
+   >>> 
    9
    8
    7
@@ -996,13 +999,13 @@ i==10에서 break가 걸렸으므로 레골라스를 출력하지 않는다. (fo
 
 ```python
 >>> for n in range(2, 10):
-...     for x in range(2, n):
-...         if n % x == 0:
-...             print(n, 'equals', x, '*', n//x)
-...             break
-...     else:
-...         # loop fell through without finding a factor
-...         print(n, 'is a prime number')
+>>>     for x in range(2, n):
+>>>         if n % x == 0:
+>>>             print(n, 'equals', x, '*', n//x)
+>>>             break
+>>>     else:
+>>>         # loop fell through without finding a factor
+>>>         print(n, 'is a prime number')
 ...
 2 is a prime number
 3 is a prime number
@@ -1024,13 +1027,13 @@ try에서 에러가 발생하지 않으면 else 실행, 에러 발생하면 exce
 # cf) while문은 무한루프 만들기 좋다
 
 >>> while True:
-...     try :
-...         a=int(input())
-...     except :
-...         continue
-...     else : # 숫자면 break
-...         break
-... 
+>>>     try :
+>>>         a=int(input())
+>>>     except :
+>>>         continue
+>>>     else : # 숫자면 break
+>>>         break
+>>> 
 아라곤
 레골라스
 3
@@ -1041,13 +1044,13 @@ try에서 에러가 발생하지 않으면 else 실행, 에러 발생하면 exce
 ```python
 # while 뒤에 조건이 True라서 실행된다
 >>> while [123, 1, 2, 13, 'as'] :
-...     try :
-...         a=int(input())
-...     except :
-...         continue
-...     else :
-...         break
-... 
+>>>     try :
+>>>         a=int(input())
+>>>     except :
+>>>         continue
+>>>     else :
+>>>         break
+>>> 
 해리포터
 헤르미온느
 론 위즐리
@@ -1066,8 +1069,8 @@ C언어랑 똑같다고 생각하면 된다. 즉, 파라미터와 인자 갯수�
 
 ```python
 >>> def moon_beauty(a,b):
-...     ''' 함수 설명 '''
-...     a = 1
+>>>     ''' 함수 설명 '''
+>>>     a = 1
     
 >>> moon_beauty()    
 TypeError
@@ -1081,7 +1084,7 @@ TypeError
 
 ```python
 >>> def moon_beauty(a, b):
-...     print(a, b)
+>>>     print(a, b)
     
 >>> moon_beauty(1,2)    
 1 2
@@ -1095,7 +1098,7 @@ TypeError
 
 ```python
 >>> def moon_beauty(a, b):
-...     print(a, b)
+>>>     print(a, b)
     
 >>> moon_beauty(b=3,a=4)    
 4 3
@@ -1109,7 +1112,7 @@ TypeError
 
 ```python
 >>> def moon_beauty(a, b, c):
-...     print(a, b, c)
+>>>     print(a, b, c)
     
 >>> moon_beauty(3, c=4, 2)   
 SyntaxError
@@ -1137,7 +1140,7 @@ TypeError
 ```python
 # 무조건 키워드. 포지셔널 방식 절대 불가
 >>> def moon_beauty(*, a=0, b=0, c=0) :
-...     print(a, b, c)
+>>>     print(a, b, c)
     
 >>> moon_beauty()    
 0 0 0
@@ -1169,7 +1172,7 @@ TypeError
 
 ```python
 >>> def moon_beauty(x=0, *, a=0, b=0, c=0) :
-...     print(x, a, b, c)
+>>>     print(x, a, b, c)
     
 >>> moon_beauty(3)    
 3 0 0 0
@@ -1183,7 +1186,7 @@ default는 뒤부터 채워줘야 에러가 발생하지 않는다.
 
 ```python
 >>> def moon_beauty(a, b=0, c):
-...     print(a, b, c)
+>>>     print(a, b, c)
 ```
 
 > SyntaxError
@@ -1197,11 +1200,11 @@ default는 뒤부터 채워줘야 에러가 발생하지 않는다.
 ```python
 # OK
 >>> def moon_beauty(a, b, c=0):
-...     print(a, b, c)
+>>>     print(a, b, c)
     
 # OK
 >>> def moon_beauty(a=0, b=0, c=0):
-...     print(a, b, c)
+>>>     print(a, b, c)
     
 >>> moon_beauty()   
 0 0 0
@@ -1218,7 +1221,7 @@ default는 뒤부터 채워줘야 에러가 발생하지 않는다.
 
 ```python
 >>> def moon_beauty(*a):
-...     print(a)
+>>>     print(a)
     
 >>> moon_beauty()   
 ()
@@ -1241,7 +1244,7 @@ default는 뒤부터 채워줘야 에러가 발생하지 않는다.
 
 ```python
 >>> def moon_beauty(**a):
-...     print(a)
+>>>     print(a)
     
 >>> moon_beauty(a=3, b=2, c=4)   
 {'a': 3, 'b': 2, 'c':4}
@@ -1253,7 +1256,7 @@ default는 뒤부터 채워줘야 에러가 발생하지 않는다.
 
 ```python
 >>> def moon_beauty(a, b, c):
-...     print(a, b, c)
+>>>     print(a, b, c)
     
 >>> a = [1, 2, 3]
 >>> moon_beauty(a[0], a[1], a[2])   
@@ -1279,7 +1282,7 @@ TypeError
 
 ```python
 >>> def moon_beauty(a, b, c):
-...     print(a, b, c)
+>>>     print(a, b, c)
     
 # 별표 한개이므로 key가 포지셔널 방식으로 들어감
 >>> a = {'a': 1, 'b': 2, 'c': 3}
@@ -1321,7 +1324,17 @@ a c b
 
 (1) 할당 : 나머지를 받겠다.   `a, b = 1, 2, 3, 4, 5`
 
-<br>
+(2) unzip
+
+3) ** 딕셔너리 형식
+
+4) 라이브러리 불러올 때
+
+5) 함수 선언시, 파라미터 형식 ()
+
+6) 
+
+7) 
 
 <br>
 
