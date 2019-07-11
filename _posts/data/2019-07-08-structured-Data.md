@@ -10,10 +10,6 @@ comments: true
 
 ## 빅데이터 청년인재 Day 6
 
-------
-
-### 
-
 ##  목차
 
 * [데이터베이스 개요](https://gungadinn.github.io/data/2019/07/08/structured-Data/#데이터베이스-개요)
@@ -43,11 +39,11 @@ comments: true
 
 * 80% (unstructured) vs 20% (structured)
 
-* Big Data = strcutured data + unstructured data (what companies don't know how to exploit yet)
+* Big Data = structured data + unstructured data (what companies don't know how to exploit yet)
 
 * Data : raw facts, now context, just numbers and text
 
-* Information: processed data, data with context, value-added data => make decisions
+* Information : processed data, data with context, value-added data => make decisions
 
 * 
 
@@ -213,28 +209,19 @@ comments: true
 
 ### Data Type
 
-* Boolean (BOOLEAN)
-
-  * TRUE나 FALSE 표현
-
+* Boolean
+  * TRUE나 FALSE로 표현
 * Character (CHAR, VARCHAR)
-
-  * CHAR : 고정    ex) 주민등록번호
+  * CHAR : 고정   ex) 주민등록번호
   * VARCHAR : 가변   ex) 댓글
-
-  * 이름이나 사람, 도시들과 같은 column을 표현
-
+  * 이름이나 사람, 도시들과 같은 column 표현
 * Exact numeric (NUMERIC, DECIMAL, INTEGER, SMALLINT, BIGINT)
-
-  * 숫자 표현
-
+  *  숫자 표현
 * Approximate numeric (REAL, FLOAT, DOUBLE)
-
 * Datetime (DATE, TIME, TIMESTAMP)
-
   * time of a day
-  * datetime fields(시간, 분, 초) 들을 포함한다.
-  * Syntax : TIME[( precision )]
+  * datetime fields (시간, 분, 초) 들을 포함
+  * syntax : TIME[(precision)]
   * Precision : seconds value, default is 0 / 3 means miliseconds / 6 means microseconds
 
 <br>
@@ -332,7 +319,7 @@ cur.fetchall()
 
 ### 2) executescript
 
-`commit` 문을 먼저 실행 한 다음 매개변수로 가져온 sql 스크립트를 실행한다.
+* `commit` 문을 먼저 실행 한 다음 매개변수로 가져온 sql 스크립트를 실행한다.
 
 ```python
 cur.executescript("""
@@ -419,7 +406,7 @@ cur.execute("SELECT id, name, address, salary from COMPANY")
 cur.fetchall()
  ```
 
-이 방법은 execute 하는 순간 cursor가 데이터를 물고 있다. 그래서 아래 방법을 추천
+* 이 방법은 execute 하는 순간 cursor가 데이터를 물고 있다. 그래서 아래 방법을 추천
 
 <br>
 
