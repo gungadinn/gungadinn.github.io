@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "정형 데이터 (RDBMS, SQL)"
+title: "정형 데이터 - RDBMS, SQL"
 category: data
 tags: [데이터]
 comments: true
@@ -9,6 +9,8 @@ comments: true
 ------
 
 ## 빅데이터 청년인재 Day 6
+
+---
 
 ##  목차
 

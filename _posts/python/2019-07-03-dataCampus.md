@@ -6,31 +6,36 @@ tags: [python]
 comments: true
 ---
 
+---
+
 ## 빅데이터 청년인재 Day 3
+
+---
 
 ### 목차
 
+* [함수형 프로그래밍](https://gungadinn.github.io/python/2019/07/03/dataCampus/#함수형-프로그래밍)
+* [함수형 기법의 장점](https://gungadinn.github.io/python/2019/07/03/dataCampus/#함수형-기법의-장점)
+* [이터레이터 (iterator)](https://gungadinn.github.io/python/2019/07/03/dataCampus/#이터레이터)
+* [제너레이터 (generator)](https://gungadinn.github.io/python/2019/07/03/dataCampus/#제너레이터)
+* [반복식 (comprehension)](https://gungadinn.github.io/python/2019/07/03/dataCampus/#반복식)
+* [First Class Function](https://gungadinn.github.io/python/2019/07/03/dataCampus/#first-class-function)
+* [LEGB Rule](https://gungadinn.github.io/python/2019/07/03/dataCampus/#legb-rule)
+* [기타 및 정리](https://gungadinn.github.io/python/2019/07/03/dataCampus/#기타-및-정리)
 
+---
+
+<br>
 
 ## 함수형 프로그래밍
 
+---
 
-
-함수형 기법 : 함수를 이용하여 프로그래밍을 하는 방식
-
-파이썬은 멀티 패러다임 언어
-
-객체지향 언어지만 함수형 언어를 지원한다
-
-함수를 이용하게 되면 side effect를 없앨 수 있다
-
-def 로 묶여 있다는 것을 모듈화
-
-
-
-
-
- 에서 mutable 없음. 바뀌면 골치아프니까 함수형 기법에서는 immutable 타입만 가지고 있다.
+* 함수형 기법 : 함수를 이용하여 프로그래밍을 하는 방식
+  * 함수의 세트로 문제를 분할한다.
+  * 함수의 입력으로부터 동작해서 출력을 만든다.
+  * 함수를 이용하게 되면 side effect를 줄일 수 있다.
+  * def로 묶여 있는 것이 모듈화
 
 <br>
 
@@ -41,10 +46,6 @@ def 로 묶여 있다는 것을 모듈화
 3
 ```
 
-> 함수형 프로그래밍에서는 정의역을 한번에 처리하는 것에 더 효율적임
->
-> 함수형 패러다임에서는 한꺼번에 처리하기 위해서는 한 개씩 뽑아내야 하기 때문에  처리한다.
-
 <br>
 
 ```python
@@ -54,55 +55,50 @@ def 로 묶여 있다는 것을 모듈화
 
 >>> time.time()
 562419842.0954182
+# 1
 ```
 
-> output : 1971년 이후로 현재 시간까지 나노세컨드로 
+* 멀티 패러다임 : 파이썬은 순수한 함수형 패러다임이 아니다. 객체지향언어를 기반으로 함수형 패러다임까지 지원하는 것이기 때문에 함수형 패러다임에 집착할 필요가 없고 필요한 부분만 가져다 사용하면 된다.
 
-멀티 패러다임 : 
 
-객체지향언어를 기반으로 하지만 함수형 패러다임까지 지원
-
-함수의 세트를 통해 흘러다니며. 함수의 입력으로부터 동작해서 출력을 만든다. 
-
-<u>파이썬은 순수한 함수형 패러다임이 아니다. </u> 기본 객체지향의 함수형 패러다임을 지원을 한다. 때문에 함수형 패러다임에 집착할 필요가 없고 필요한 부분만 가져다 사용하면 된다.
-
- <br>
 
 <br>
 
-## 2.함수형 기법의 장점
+## 함수형 기법의 장점
 
 ---
 
 ### 1) 형식적 증명 가능성
 
-중간에 값이 바뀌면 안되기 때문에 자료 형태가 mutable 형태이면 불가능하다. immutable만 가능.
+프로그램이 올바른지 증명하기 위해서는 항상 참인 입력 데이터를 넣어야한다. 즉 중간에 값이 바뀌면 안되기 때문에 자료 형태가 mutable 형태이면 불가능하고 __immutable만 가능__하다.
 
-<br>
+
 
 ### 2) 모듈성
 
 프로그램을 작은 조각(함수)으로 분해할 수 있다. 작은 조각들을 잘 만들면 읽거나 오류 수정에 더 용이하고 다른 함수와 함성 시킬 수 있다.
 
-<br>
+
 
 ### 3) 결합성
 
-<br>
+함수형 프로그램을 만들 때, 다양한 입력과 출력으로 여러가지 함수를 작성할 수 있다. 
+
+
 
 ### 4) 디버깅과 테스트 용이성
 
-<br>
+함수형 방식 프로그램은 일반적으로 함수가 작고 분명하게 명시되기 때문에 디버깅이 단순화된다. 또한 각 함수는 잠재적으로 단위 테스트의 대상이라 테스트가 더 쉽다.
 
 <br>
 
-## 3. 이터레이터 (Iterator)
+## 이터레이터 (Iterator)
 
 ---
 
-이터레이터는 순환 가능한 객체로 전체 중에서 한 번에 한 개씩만 반환한다. 이터레이터는 next 함수 혹은 \__next__ 메소드를 통해 객체의 다음 요소를 반환한다. 
+이터레이터는 순환 가능한 객체로 전체 중에서 한 번에 한 개씩만 반환한다. 이터레이터는 `next()`  혹은` __next__` 메소드를 통해 객체의 다음 요소를 반환한다. 
 
-이터러블은 이터레이터를 얻을 수 있는 객체이다. `for X in Y` 에서 Y는 이터레이터여야 한다.
+`for X in Y` 에서 Y는 이터레이터 혹은 `iter()` 가 이터레이터를 생성할 수 있는 객체여야 한다.
 
 <br>
 
@@ -132,7 +128,13 @@ StopIteration
 
 > StopIteration : Iterator에 의해 생성된 항목이 더이상 없다는 것을 알려주기 위해, 내장함수 next() 나 이터레이터의 \__next__ 메소드가 일으킨다.
 
-![image-20190703130313561](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190703130313561.png)
+<center>
+  <figure>
+    <img src="/img/post/python/03-01.png">
+  </figure>
+</center>
+
+
 
 <br>
 
@@ -144,15 +146,20 @@ StopIteration
 >>>         print(i)
    
 >>> dis.dis(iterator_exam)
+
+# dis : 어셈블리어로 바꿔준다
+# for문 돌 때 이터레이터가 쓰인다
 ```
 
-> dis : 어셈블리어로 바꿔준다.
->
-> for문이 돌 때 이터레이터가 쓰인다.
->
-> output
->
-> ![image-20190703132140965](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190703132140965.png)
+* output : 
+
+<center>
+  <figure>
+    <img src="/img/post/python/03-02.png">
+  </figure>
+</center>
+
+
 
 <br>
 
@@ -166,6 +173,12 @@ set_iterator
 
 >>> next(b)   
 1
+>>> next(b)  
+2
+>>> next(b)  
+3
+>>> next(b)  
+StopIteration
 ```
 
 <br>
@@ -188,39 +201,6 @@ str_iterator
 
 <br>
 
-```python
->>> a = {1, 2, 3}
->>> b = iter(a)
->>> type(b)   
-str_iterator
-
->>> next(b)    
-1
->>> next(b)  
-2
->>> next(b)  
-3
->>> next(b)  
-StopIteration
-
->>> a = [1, 2, 3]
->>> b = iter(a)
->>> type(b)   # 
-<class 'list_iterator'>
->>> next(b)
->>> list(b)  
-[2, 3]
-
->>> a = [1, 2, 3]
->>> b = iter(a)
->>> next(b)   
-[1]
->>> next(b)  
-[2, 3]
->>> list(b)  
-[3]
-```
-
 * 파이썬에서 이터레이터의 장점 : __Lazy__
 
   Lazy : 실행되기 전까지는 메모리 상에 안 올리고 실행되면 하나씩 메모리에 올려서 실행한다. 즉, 위의 예에서 next 할 때 하나씩 메모리에 올라간다. 이러한 방법은 속도가 느린데 파이썬에서는 Lazy의 속도를 올리기 위해 내부적으로 최적화가 되어있다. 따라서, python의 lazy 기법은 속도도 빠르다. 
@@ -228,17 +208,9 @@ StopIteration
 * next는  pop하고 비슷하나 다르다. pop은 뒤에서부터 뽑는다면 next는 앞에서부터 뽑는다.
 
 * 내부적으로 이터레이터로 바꾼다.
-* iterator에는 리스트, 튜플, 집합, 딕셔너리 전부 가능하다.
+* iterator 지원하는 데이터형 : 리스트, 튜플, 문자열, 딕셔너리, 집합
 
 <br>
-
-객체지향을 사용하기 위해서는 클래스를 선언하고 인스턴스화 한다.
-
-인스턴스화 하려면 클래스 이름을 알아야한다.
-
-객체지향은 인스턴스 방식으로 값을 만든다. 리터럴 방식도 지원.#
-
-이터러블(iterable)과 이터레이터(iterator) 차이점 : next의 유무
 
 ```python
 >>> set(dir(Iterator)) - set(dir(Iterable))
@@ -247,13 +219,9 @@ StopIteration
 
 즉 이터레이터에는 next가 있고 이터러블에는 없다. 따라서 이터러블 쓸 곳에서 이터레이터를 써도 된다.
 
-* 이터레이터 지원하는 데이터형 : 리스트, 튜플, 문자열, 딕셔너리, 집합
-
 <br>
 
-<br>
-
-## 4. 제너레이터 (Generator)
+## 제너레이터 (Generator)
 
 ---
 
@@ -279,11 +247,7 @@ generator
 StopIteration
 ```
 
-> StopIteration : try except와 같이 쓰면 좋을 듯
-
-![image-20190703135234252](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190703135234252.png)
-
-
+* StopIteration : try except와 같이 쓰면 좋을 듯
 
 yield 키워드를 포함하는 함수는 제너레이터 함수이다. yield와 return의 차이점은 yield에 도달하면 제너레이터의 실행 상태가 일시중단되고 지역변수가 보존된다. 제너레이터 또한 next() 혹은 \__next__를 사용할 수 있으며 lazy한 장점이 있다.
 
@@ -308,8 +272,6 @@ yield 키워드를 포함하는 함수는 제너레이터 함수이다. yield와
 StopIteration
 ```
 
-> StopIteration![image-20190703140033729](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190703140033729.png)
-
 <br>
 
  ```python
@@ -321,7 +283,7 @@ sum(x for x in range(1,11))  # 위의 식을 현재 식처럼 축약 가능하�
 
 <br>
 
-## 5. 반복식 (Comprehension)
+## 반복식 (Comprehension)
 
 ---
 
@@ -366,35 +328,19 @@ sum(x for x in range(1,11))  # 위의 식을 현재 식처럼 축약 가능하�
 
  <br>
 
-### 4) 튜플 ? (tuple)
+### 4) 튜플? (tuple)
 
 튜플(immutable)은 제너레이터이기 때문에 next를 사용하면 된다.
 
 <br>
 
-### 5) 참고
-
-```python
->>> a = [x for x in range(10)]
-
-# 위아래 코드는 같은 코드이다
-
->>> temp=[]
->>> for i in range(10)
->>>     temp.append(i)
-```
-
-
-
-<br>
-
-## 6. First Class Funtion
+## First Class Funtion
 
 ---
 
 파이썬에서 함수는 값이기 때문에 할당문에서 오른쪽에 쓸 수 있다.
 
-> example 1
+* example 1
 
 ```python
 >>> a = print
@@ -413,7 +359,7 @@ hello world
 
 <br>
 
-> example 2
+* example 2
 
 ```python
 >>> sum = 0
@@ -426,7 +372,7 @@ NameError   #(함수 sum만 남았기 때문에 name 'sum'은 정의되지 않�
 
 <br>
 
-> example 3 : 아래와 같은 예시에서는 더 이상 sum 함수를 사용하지 못한다.
+* example 3 : 아래와 같은 예시에서는 더 이상 sum 함수를 사용하지 못한다.
 
 ```python
 >>> sum = 0
@@ -439,7 +385,7 @@ NameError   #(함수 sum만 남았기 때문에 name 'sum'은 정의되지 않�
 
 <br>
 
-> example 4 
+* example 4
 
 ```python
 >>> a = [str, int, float]
@@ -461,9 +407,7 @@ None
 
 <br>
 
-<br>
-
-## 7. 파이썬의 LEGB rule
+## 파이썬의 LEGB rule
 
 ---
 
@@ -493,6 +437,7 @@ None
 
 >>> z    
 NameError   # 캡슐화
+
 >>> y.z = 3
 >>> y()   
 1
@@ -584,7 +529,18 @@ def y(x):
 >>> two_add(4)
 ```
 
-> 첫 번째 인자를 무엇으로 받느냐에 따라 두번째 인자를 전체적으로 바꿀 수 있다.
+```python
+>>> a=1
+>>> def x():
+        a=3
+        def y():
+            return a
+        return y()
+      
+3
+```
+
+* 첫 번째 인자를 무엇으로 받느냐에 따라 두번째 인자를 전체적으로 바꿀 수 있다.
 
 <br>
 
@@ -601,7 +557,7 @@ def y(x):
 1
 ```
 
-<br>
+
 
 ```python
 >>> x = 1   # 접근 할 수 있지만 변경은 불가
@@ -613,7 +569,7 @@ def y(x):
 UnBoundLocalError   #할당 전에 참조되기 때문에 에러
 ```
 
-<br>
+
 
 ```python
 >>> x = 1
@@ -628,9 +584,46 @@ UnBoundLocalError   #할당 전에 참조되기 때문에 에러
 3
 ```
 
-> global 선언 시 함수 안밖의 객체가 싱크된다.
->
-> 즉 함수 내부에서 함수 외부의 것을 바꿀 수 없지만 global을 통해 싱크가 되어 바꿀 수 있다. 하지만 global을 사용하는 것은 안 좋다. 내가 생각하는 값이 있는데 global 객체가 있는 함수를 실행함으로써 값이 바뀔 수 있기 때문이다. 일종의 C언어의 goto 같은 존재이다. (python consenting adults)
+
+
+```python
+>>> a=1
+>>> def x():
+        return a
+  
+>>> x()
+1
+```
+
+
+
+```python
+>>> a = 1
+>>> def x():
+        global a
+        a=2
+        return a
+    
+>>> x()
+2
+```
+
+
+
+```python
+>>> a=1
+>>> def x():
+        def y():
+            return a
+        return y()
+    
+>>> x()
+1
+```
+
+
+
+* global 선언 시 함수 안밖의 객체가 싱크된다. 즉 함수 내부에서 함수 외부의 것을 바꿀 수 없지만 global을 통해 싱크가 되어 바꿀 수 있다. 하지만 global을 사용하는 것은 안 좋다. 내가 생각하는 값이 있는데 global 객체가 있는 함수를 실행함으로써 값이 바뀔 수 있기 때문이다. 일종의 C언어의 goto 같은 존재. (python consenting adults)
 
 <br>
 
@@ -708,7 +701,11 @@ nonlocal 문은 나열된 식별자들이 전역을 제외하고 가장 가까�
 UnboundLocalError
 ```
 
-
+<center>
+  <figure>
+    <img src="/img/post/python/03-04.png">
+  </figure>
+</center>
 
 ```python
 >>> a=1
@@ -716,7 +713,7 @@ UnboundLocalError
 >>>     a=3
 >>>     def y():
 >>>         global a
->>>         a=a+1 #
+>>>         a=a+1
 >>>         return a
 >>>     return y()
   
@@ -732,7 +729,7 @@ UnboundLocalError
 >>>     a=3
 >>>     def y():
 >>>         nonlocal a
->>>         a=a+1 #
+>>>         a=a+1
 >>>         return a
 >>>     return y()
   
@@ -786,7 +783,11 @@ UnboundLocalError
 NameError
 ```
 
-
+<center>
+  <figure>
+    <img src="/img/post/python/03-05.png">
+  </figure>
+</center>
 
 ```python
 >>> a=1
@@ -801,7 +802,9 @@ NameError
 UnbounLocalError
 ```
 
+UnboundLocalError : 함수/변수를 찾아보니 있는데 아직 메모리에 할당이 안 됐을 때 발생
 
+<br>
 
 ```python
 >>> print(yy)
@@ -817,10 +820,10 @@ NameError
         def y():
             return 1
         print(b)
->>>     return y()
+        return y()
   
 >>> x()
-NameError
+NameError  # b가 없다
 ```
 
 
@@ -835,14 +838,119 @@ NameError
         return y()
   
 >>> x()
-UnboundLocalError
+UnboundLocalError  
+# local에서 찾는데 있다! 근데 아직 할당이 안 됐으니까 UnboundLocalError 발생
+```
+
+<br>
+
+## 내장함수
+
+---
+
+### 1) map
+
+`map(function, iterable, …)` : iterable 모든 항목에 function을 적용한 후 그 결과를 돌려주는 이터레이터를 돌려준다. 간단히 말해 뒤에 있는 데이터를 앞에 있는 함수에 넣어 데이터 전체를 바꿔준다.
+
+```python
+def add_one(x):
+    return x+1
+  
+map(add_one, [1,2,3,4,5])
+
+# 이렇게만 쓰면 아무것도 보이지 않는다.
+```
+
+```python
+>>> list(map(add_one, [1,2,3,4,5])) 
+[2, 3, 4, 5, 6]
+
+# 람다 함수 또한 함수 인자로 넣을 수 있다.
+>>> list(map(lambda x:x+1, [1,2,3,4,5]))
+[2, 3, 4, 5, 6]
+```
+
+따라서 일일이 for문에 넣는 것보다 위와 같은 방식으로 한번에 바꿔주는 것이 효율적이다.
+
+```python
+# 응용
+
+>>> for i in map(lambda x:x+1, [1,2,3,4,5]):
+>>>     print(i)
+2
+3
+4
+5
+6
 ```
 
 
 
 <br>
 
-## 기타
+### 2) filter
+
+`filter(function, iterable)` : 참을 돌려준다. 조건은 true 혹은 false를 받아내야한다.
+
+```python
+>>> tuple(filter(lambda x:x>3, [1,2,3,4,5,6]))
+(4, 5, 6)
+```
+
+<br>
+
+### 3) reduce
+
+원래 기본적인 내장함수였는데 functiontool로 들어갔음. 
+
+`functools.reduce(function, iterable[, initialize])` : 더 이상 내장함수는 아니다. 순차적으로 두 개의 인자로 이루어진 함수를 왼쪽에서 오른쪽으로 적용하며 단일 값으로 줄인다. 속도도 좋아지고 메모리 효율성도 좋아진다.
+
+```python
+>>> from functools import reduce
+>>> reduce(lambda x,y:x+y, [1,2,3,4,5])
+15 
+
+# reduction(축소식) : 위의 예에서 x,y가 있으면 x+y를 한다
+# [1,2,3,4,5]에서 1,2가 있으면 1+2 => 3
+# [3,3,4,5]에서 3,3가 있으면 3+3 => 6
+# [6,4,5]에서 6,4가 있으면 6+4 => 10
+# [10,5]에서 10+5가 있으면 10+5 => 15
+```
+
+```python
+>>> from functools import reduce
+>>> add5 = lambda n: n+5
+>>> reduce(lambda l, x: l+[add5(x)], range(10), [])
+[5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+```
+
+#### 초기값이 주어질 때
+
+ ```python
+>>> reduce(lambda x,y:x+y, [1,2,3,4], 5)
+15
+
+#5를 집어넣으면 이게 초기값이므로 5,1이 처음 인자로 들어가서 5,1 : 6
+# 6,2 : 8
+# 8,3 : 11
+# 11,4 : 15 가 된다
+ ```
+
+```python
+>>> reduce(lambda x,y:x+[y], [1,2,3,4], 5)
+TypeError
+
+# x=5, y=1 지원되지 않는 연산자 유형
+# 이를 고치기 위해 초기값을 비어있는 연산자로 해주면
+# y에 1이 들어가고 결국엔 리스트가 된다.
+
+>>> reduce(lambda x,y:x+[y], [1,2,3,4], [])
+[1, 2, 3, 4]
+```
+
+<br>
+
+## 기타 및 정리
 
 ---
 
@@ -854,36 +962,20 @@ UnboundLocalError
    >>> [x for x in range(10) if x%2 == 0]
    [0, 2, 4, 6, 8]
    ```
-```
    
-   for 뒤에 있는 x를 만나면 if문에 간 후 참이면 x를 실행한다. 
-   
-
+   for 뒤에 있는 x를 만나면 if 문에 간 후 참이면 x를 실행한다.
    
 2. if를 앞에 쓴다
 
    ```python
    >>> [x if x%2 == 0 else 3 for x in range(10)]
    [0, 3, 2, 3, 4, 3, 6, 3, 8, 3]
-```
-
-   if가 참이면 앞의 문장(if문)을 실행하고 거짓이면 뒤의 문장(else)을 실행한다.
-
-
-
-
-3. 재귀
-
-   ```python
-   >>> def fibo(n):
-           if n<2:
-   >>>         return 1
-   >>>     return fibo(n-1)+fibo(n-2)
+   
+   >>> [x if x%2==0 else None for x in range(10)]
+   [0, None, 2, None, 4, None, 6, None, 8, None]
    ```
 
-4. 내장함수
-
-   1) map
+   if가 참이면 앞의 문장 (if)를 실행하고 거짓이면 뒤의 문장 (else)를 실행한다.
 
 <br>
 
@@ -923,14 +1015,37 @@ UnboundLocalError
 ### 3) for를 쓰지 않는 기법
 
 1.  이터레이터 제너레이터
-2. 실제 for는 있지만 for문을 쓰지 않는다. (for문을 쓰지 않고 동시에 여러개를 처리하는 기법)
+2. 실제 for는 있지만 없다고 가정하는 것 :  컴프리헨션(for문을 쓰지 않고 동시에 여러개를 처리하는 기법)
 
-> 
+```python
+a = [x for x in range(10)]
 
-## 에러정리
+# vs
 
----
+temp=[]
+for i in range(10);
+   temp.append(i)
+```
 
-* StopIteration : Iterator에 의해 생성된 항목이 더이상 없다는 것을 알려주기 위해, 내장함수 next() 나 이터레이터의 _ _next__ 메소드가 일으킨다.
+3. 재귀
 
-b : builtin
+```python
+def fibo(n):
+    if n<2:
+        return 1
+    return fibo(n-1) + fibo(n-2) + x
+```
+
+<br>
+
+4. map, filter, reduce
+
+```python
+>>> reduce(lambda x,y:y+x, 'abcde')
+edbca
+# a b ba
+# ba c cba
+# cba d dcba
+# e dbca edbca
+```
+

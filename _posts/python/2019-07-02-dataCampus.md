@@ -6,6 +6,8 @@ tags: [python]
 comments: true
 ---
 
+---
+
 ## 빅데이터 청년인재 Day 2
 
 ---
@@ -52,7 +54,7 @@ comments: true
 
 ---
 
-
+<br>
 
 ## 1. 할당의 종류
 
