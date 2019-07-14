@@ -24,7 +24,13 @@ comments: true
 . ^ $ * + ? { } [ ] \ | ( )
 ```
 
-![image-20190714161818353](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190714161818353.png)
+<center>
+  <figure>
+    <img src="/img/post/data/14-01.png">
+  </figure>
+</center>
+
+
 
 * `.` : Dot(.) 메타문자는 줄바꿈 문자인 `\n` 를 제외한 모든 문자와 매치된다.
   * a.b == a+모든문자+b
@@ -46,7 +52,11 @@ comments: true
 
 ### Character classes
 
-![image-20190714161743307](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190714161743307.png)
+<center>
+  <figure>
+    <img src="/img/post/data/14-02.png">
+  </figure>
+</center>
 
 
 
@@ -66,7 +76,11 @@ comments: true
 
   
 
-![image-20190714161751649](/Users/eunkyoung/Library/Application Support/typora-user-images/image-20190714161751649.png)
+<center>
+  <figure>
+    <img src="/img/post/data/14-03.png">
+  </figure>
+</center>
 
 [출처](http://www.nextree.co.kr/p4327/)
 
