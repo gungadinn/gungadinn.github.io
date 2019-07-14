@@ -190,27 +190,28 @@ TypeError: 'tuple' object does not support item assignment
 
 ## 표준 라이브러리
 
-1. 운영체제 인터페이스
+* 운영체제 인터페이스
 
  ` import os` : 운영 체제와 상호 작용하기 위한 수십가지 함수 제공
 
-2. 파일 와일드카드
+* 파일 와일드카드
 
 `import glob` : 디렉토리 와일드카드 검색으로 파일 목록을 만드는 함수 제공
 
-3. 명령행 인자
+* 명령행 인자
 
 `import sys` 
 
-4. 에러 출력 리디렉션과 프로그램 종료
+* 에러 출력 리디렉션과 프로그램 종료
 
  ```python
 >>> sys.stderr.write('Warning, log file not found starting a new one\n')
 Warning, log file not found starting a new one
  ```
 
-5. 정규식
-6. 수학
+* 정규식
+
+* 수학
 
 `import math` : 부동 소수점 연산을 위한 C 라이브러리 함수들 제공
 
@@ -218,11 +219,11 @@ Warning, log file not found starting a new one
 
 `import statistics` : 수치 데이터의 기본적인 통계적 틍성 제공
 
-7. 날짜와 시간
+* 날짜와 시간
 
 `from datetime import date` : 날짜와 시간을 조작하는 클래스 제공
 
-8. 성능 측정
+* 성능 측정
 
 ```python
 >>> from timeit import Timer
