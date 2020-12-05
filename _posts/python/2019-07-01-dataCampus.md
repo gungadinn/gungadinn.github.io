@@ -66,7 +66,7 @@ comments: true
 'main']
 ```
 
-> dir : 인자가 있으면, 현재 지역 스코프에 있는 이름들의 리스트를 돌려준다. 인자가 없으면, 현재 객체에 유효한 어트리뷰트의 리스트를 돌려주려고 시도한다. [docs](https://docs.python.org/ko/3/library/functions.html#dir)
+> * dir : 인자가 있으면, 현재 지역 스코프에 있는 이름들의 리스트를 돌려준다. 인자가 없으면, 현재 객체에 유효한 어트리뷰트의 리스트를 돌려주려고 시도한다. [docs](https://docs.python.org/ko/3/library/functions.html#dir)
 >
 > 언더바 두개 (__) 붙은거  :  [magin method](https://docs.python.org/ko/3/glossary.html#term-magic-method), [special method](https://docs.python.org/ko/3/glossary.html#term-special-method) (어떤 연산을 실행할 때 묵시적으로 호출되는 메소드)
 > 
@@ -470,7 +470,7 @@ IndexError
 'bc'  #(slice는 범위를 벗어나도 에러가 발생하지 않는다.)
 
 >>> a='반지의제왕'
->>> a[slize(0,2)]   
+>>> a[slice(0,2)]   
 '반지'
 ```
 
@@ -532,6 +532,8 @@ frozenset({1, 2, 3})
   ex) int, str, tuple, frozen set 등
 
 * 호모지니어스 (Homogenous) : 안에 들어갈 데이터 타입이 같은 것
+
+  ex) str 삼총사, range 등
 
 * 헤테로지니어스 (Heterogenous) : 안에 들어갈 데이터 타입이 다른 것
 
